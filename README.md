@@ -47,12 +47,12 @@ AEOLUS merged both systems into a single standardized database. To handle this, 
 Before any analysis, a thorough data quality assessment was performed on all tables.
 
 ### CONCEPT
-- `concept_id`, `concept_name`, `domain_id` — no nulls ✅
+- `concept_id`, `concept_name`, `domain_id` — no nulls
 - `standard_concept` — 7,319 nulls. Not missing data — in OMOP, a null here means the concept is non-standard (a synonym). Expected and valid.
 - `invalid_reason` — 40,996 nulls. Also valid — null means the concept is currently active.
 
 ### STANDARD_CASE_DRUG
-- `drug_seq`, `role_cod`, `standard_concept_id` — no nulls ✅
+- `drug_seq`, `role_cod`, `standard_concept_id` — no nulls
 - `primaryid` — 18,092 nulls. After investigation, these are historical records from **LAERS** (the legacy FDA system, pre-2012), which use `isr` as the case identifier instead of `primaryid`. Records are valid and retained.
 
 **Drug role distribution:**
